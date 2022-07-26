@@ -1,16 +1,14 @@
-import React, { useCallback } from "react";
-import { View, Text, Button, Image } from "@tarojs/components";
-// import { useEnv, useNavigationBar, useModal, useToast } from "taro-hooks";
+import React from "react";
 import { AtCalendar } from "taro-ui"
+import Layout from "../../components/Layout";
 
 import './index.less'
 
 const Index = () => {
-
   return (
-    <View className='wrapper'>
+    <Layout className='wrapper'>
       <AtCalendar />
-    </View>
+    </Layout>
   );
 };
 
