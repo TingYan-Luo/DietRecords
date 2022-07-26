@@ -15,7 +15,7 @@
     "sourceMap": true,
     "baseUrl": ".",
     "rootDir": ".",
-    "jsx": "react",
+    "jsx": "preserve",
     "allowJs": true,
     "resolveJsonModule": true,
     "typeRoots": [
@@ -23,5 +23,7 @@
     ]
   },
   "include": ["./src", "global.d.ts"],
-  "compileOnSave": false
+  "exclude": ["node_modules"],
+  "compileOnSave": false,
+  "typeRoots": ["node_modules/@types"]
 }
