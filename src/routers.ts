@@ -1,22 +1,22 @@
 export const Routes = [
   {
     pagePath: 'pages/index/index',
-    // selectedIconPath: 'images/tabbar_home_on.png',
-    // iconPath: 'images/tabbar_home.png',
+    selectedIconPath: 'images/calendar-fill.png',
+    iconPath: 'images/calendar.png',
     text: '首页',
     // nav: true,
   },
   {
     pagePath: 'pages/recipe/index',
-    // selectedIconPath: 'images/tabbar_cate_on.png',
-    // iconPath: 'images/tabbar_cate.png',
+    selectedIconPath: 'images/modular-fill.png',
+    iconPath: 'images/modular.png',
     text: '食谱',
     // nav: true,
   },
   {
     pagePath: 'pages/user/index',
-    // selectedIconPath: 'images/tabbar_my_on.png',
-    // iconPath: 'images/tabbar_my.png',
+    selectedIconPath: 'images/people_fill.png',
+    iconPath: 'images/people.png',
     text: '个人中心',
     // nav: true,
   }

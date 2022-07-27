@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import 'taro-ui/dist/style/index.scss' // 全局引入一次即可
-import "taro-ui/dist/style/components/icon.scss";
+// import "taro-ui/dist/style/components/icon.scss";
 // Taro 额外添加的 hooks 要从 '@tarojs/taro' 中引入
 // import { useDidShow, useDidHide } from '@tarojs/taro';
 import { Provider } from 'react-redux';
@@ -8,6 +8,7 @@ import dva from './utils/dva';
 import models from './models';
 
 // 全局样式
+import './common/custom-variables.scss';
 import './app.less';
 
 const dvaApp = dva.createApp({

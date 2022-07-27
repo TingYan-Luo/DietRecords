@@ -1,14 +1,23 @@
+import { View } from "@tarojs/components";
 import React from "react";
 import { AtCalendar } from "taro-ui"
-import Layout from "../../components/Layout";
+import { MealData } from "./mock";
+import MealCard, { MealConfig, MealType } from "./meal-card";
 
 import './index.less'
 
+const Name = 'index';
+
 const Index = () => {
   return (
-    <Layout className='wrapper'>
-      <AtCalendar />
-    </Layout>
+    <View className='wrapper'>
+      <AtCalendar className={`${Name}-calendar`} />
+      <View className={`${Name}-meals`}>
+        {Object.keys(MealConfig).map(item => (
+          <MealCard key={item} type={item as MealType} data={MealData[item]} />
+        ))}
+      </View>
+    </View>
   );
 };
 

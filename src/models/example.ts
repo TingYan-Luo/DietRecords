@@ -1,14 +1,14 @@
+/* eslint-disable no-use-before-define */
 import {
   Effects,
   Model, Reducers,
 } from './types';
 
-export type IUserModelState = Readonly<{
-  tab: number,
+export type IExampleModelState = Readonly<{
+  list: number[];
 }>
 
-
-const reducers: Reducers<IUserModelState> = {
+const reducers: Reducers<IExampleModelState> = {
   save(state, action) {
     return {
       ...state,
@@ -26,10 +26,10 @@ const effects: Effects = {
   },
 };
 
-const UserModel: Model<IUserModelState> = {
-  namespace: 'user',
+const ExampleModel: Model<IExampleModelState> = {
+  namespace: 'example',
   state: {
-    tab: 0,
+    list: [],
   },
 
   subscriptions: {
@@ -42,4 +42,4 @@ const UserModel: Model<IUserModelState> = {
   reducers,
 };
 
-export default UserModel;
+export default ExampleModel;

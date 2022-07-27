@@ -1,56 +1,32 @@
-page {
-  background-color: white;
-  padding         : 14px;
-  box-sizing      : border-box;
-  color           : #333;
-}
+@import '../../common/mixin.less';
 
 .wrapper {
   display       : flex;
   flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  background: linear-gradient(to bottom, @primary-color, #fff);
+  padding: 20rpx 24rpx;
+  overflow: auto;
+
+  .index {
+    &-calendar {
+      height: 600rpx;
+      // margin: -20rpx -32rpx 0;
+      // padding: 40rpx 32rpx 0;
+      background: #fff;
+      border-radius: 10rpx;
+      padding: 10rpx;
+      margin-bottom: 10rpx;
+    }
+    &-meals {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      margin-bottom: 20rpx;
+
+    }
+  }
 }
 
-.logo {
-  display: block;
-  width  : 270px;
-  height : 270px;
-  margin : 0 auto;
-}
-
-.title,
-.desc {
-  text-align: center;
-  font-size : 32px;
-}
-
-.desc {
-  margin   : 20px 0;
-  font-size: 28px;
-  color    : rgba(0, 0, 0, .85);
-}
-
-.list {
-  padding     : 24px 0;
-  font-size   : 32px;
-  display     : flex;
-  align-items : center;
-  border-color: rgba(51, 51, 51, .1);
-  border-style: solid;
-  border-width: 1px 0 1px 0;
-}
-
-.list:not(:first-child) {
-  border-top-width: 0;
-}
-
-.label {
-  flex: 0.4;
-}
-
-.button {
-  display         : block;
-  width           : 100%;
-  background-color: transparent;
-  border-radius   : 2px;
-  margin-top      : 20px;
-}

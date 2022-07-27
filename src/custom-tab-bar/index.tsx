@@ -1,18 +1,29 @@
 import { CoverImage, CoverView } from '@tarojs/components';
 import Taro from '@tarojs/taro';
-import React, { useState } from 'react';
+import React from 'react';
+import { connect, useDispatch } from 'react-redux';
+import { GlobalState } from 'src/models/types';
+import { IUserModelState } from 'src/models/user';
 import { tabBar } from '../routers';
 
 // import styles from './index.less';
 import './index.less';
 
-const TabBar: React.FC = () => {
+interface ITabBarProps {
+  user: IUserModelState;
+}
+
+const TabBar: React.FC<ITabBarProps> = (props) => {
   const menus = tabBar.list;
-  
-  const [current, setCurrent] = useState(0);
+  const dispatch = useDispatch();
 
   const switchTab = (index, url) => {
-    setCurrent(index);
+    dispatch({
+      type: 'user/save',
+      payload: {
+        tab: index,
+      }
+    });
     Taro.switchTab({ url: `/${url}` });
   };
 
@@ -21,9 +32,9 @@ const TabBar: React.FC = () => {
       <CoverView className='tab-bar-border'></CoverView>
       {menus.map((item, index) => {
         return (
-          <CoverView key={index} className='tab-bar-item' onClick={() => switchTab(index, item.pagePath)}>
-            {/* <CoverImage src={current === index ? item.selectedIconPath : item.iconPath} /> */}
-            <CoverView style={{ color: current === index ? tabBar.selectedColor : tabBar.color }}>{item.text}</CoverView>
+          <CoverView key={item.pagePath} className='tab-bar-item' onClick={() => switchTab(index, item.pagePath)}>
+            <CoverImage src={`../${props.user.tab === index  ? item.selectedIconPath : item.iconPath}`} />
+            {/* <CoverView style={{ color: current === index ? tabBar.selectedColor : tabBar.color }}>{item.text}</CoverView> */}
           </CoverView>
         )
       })}
@@ -31,5 +42,5 @@ const TabBar: React.FC = () => {
   )
 };
 
-export default TabBar;
+export default connect((store: GlobalState) => ({ user: store.user }))(TabBar);
 
