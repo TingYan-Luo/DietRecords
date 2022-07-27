@@ -45,7 +45,7 @@ const MealCard: React.FC<IMealCardProps> = ({
           <View key={item.id} className='meal-list-item'>
             <AtAvatar image={item.image} className='meal-list-item-avatar'></AtAvatar>
             <Text>{item.title}</Text>
-            {isEdit && (
+            {(isEdit) && (
               <View className='close' onClick={() => handleDelete(item.id)}>
                 <AtIcon value='close' size='12' color='#fff'></AtIcon>
               </View>
@@ -54,7 +54,7 @@ const MealCard: React.FC<IMealCardProps> = ({
         ))}
         <AtIcon className='meal-add' value='add-circle' size='30' color={primaryColor}></AtIcon>
       </View>
-      <AtButton className='meal-edit' type='secondary' size='small' onClick={handleEdit}>{isEdit ? '保存' : '编辑'}</AtButton>
+      {data.length ? <AtButton className='meal-edit' type='secondary' size='small' onClick={handleEdit}>{isEdit ? '保存' : '编辑'}</AtButton> : null}
     </View>
   )
 };
