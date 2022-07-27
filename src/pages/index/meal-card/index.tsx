@@ -1,4 +1,4 @@
-import { View, Text, Block } from '@tarojs/components';
+import { View, Text } from '@tarojs/components';
 import React, { useState } from 'react';
 import { AtAvatar, AtButton, AtIcon } from 'taro-ui';
 

@@ -1,0 +1,17 @@
+@import '../../common/mixin.less';
+
+.container {
+  background-color: #fff;
+  padding: @padding-v @padding-h;
+
+  .at-grid__flex .at-grid-item {
+    flex: 1 !important;
+    background-color: @primary-color;
+    margin: 10rpx;
+    border-radius: 10rpx;
+
+    .content-inner__text {
+      color: #fff;
+    }
+  }
+}
