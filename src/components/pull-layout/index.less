@@ -1,0 +1,30 @@
+.pull {
+  &-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0;
+    height: 100rpx;
+  }
+
+  &-content {
+    position: relative;
+    background-color: #fff;
+    height: calc(100vh - env(safe-area-inset-bottom));
+    z-index: 1;
+  }
+
+  &-ing::before {
+    content: '松开刷新';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -100%);
+
+    font-size: 24rpx;
+    color: rgba(0, 0, 0, 0.25);
+  }
+}
+

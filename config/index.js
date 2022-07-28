@@ -1,3 +1,5 @@
+import path from 'path';
+
 const config = {
   projectName: "diet-records",
   date: "2022-7-25",
@@ -9,6 +11,12 @@ const config = {
   },
   sourceRoot: "src",
   outputRoot: "dist",
+  alias: {
+    '@/': path.resolve(__dirname, '..', 'src'),
+    '@/components': path.resolve(__dirname, '..', 'src/components'),
+    '@/common': path.resolve(__dirname, '..', 'src/common'),
+    '@/mock': path.resolve(__dirname, '..', 'src/mock'),
+  },
   plugins: [],
   defineConstants: {},
   copy: {

@@ -1,0 +1,49 @@
+@import '../../common/mixin.less';
+
+.cmpt-search {
+  position: relative;
+  
+  height: 176rpx;
+  // overflow: hidden;
+  &-add {
+    position: absolute;
+    top: 12rpx;
+    left: 18rpx;
+    // transform: translateY(-50%);
+    width: 60rpx;
+    height: 60rpx;
+    z-index: 801;
+  }
+
+  &-input {
+    padding-left: 96rpx;
+  }
+
+  &-filters {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 96rpx;
+    padding: 12rpx 18rpx;
+    overflow-x: scroll;
+    white-space: nowrap;
+
+    &-tag {
+      margin-right: 12rpx;
+    }
+
+    &-tag:last-child {
+      margin-right: 0;
+    }
+
+
+    .at-tag--active.at-tag--primary {
+      border-color: @primary-color;
+      background-color: @primary-color;
+    }
+  }
+
+  &-filters::-webkit-scrollbar {
+    display: none;
+  }
+}

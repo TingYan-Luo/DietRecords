@@ -1,7 +1,7 @@
 import { View } from "@tarojs/components";
 import React from "react";
 import { AtCalendar } from "taro-ui"
-import { MealData } from "./mock";
+import { MealData } from "@/mock/mock";
 import MealCard, { MealConfig, MealType } from "./meal-card";
 
 import './index.less'

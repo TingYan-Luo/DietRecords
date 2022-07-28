@@ -2,20 +2,15 @@ import { View, Text } from '@tarojs/components';
 import React, { useState } from 'react';
 import { AtAvatar, AtButton, AtIcon } from 'taro-ui';
 
-import { primaryColor } from '../../../common/mixin';
+import { primaryColor } from '@/common/mixin';
+import { RecipeType } from '@/pages/recipe/list';
 import './index.less';
 
 export type MealType = 'breakfast' | 'lunch' | 'dinner';
 
-export type MealDataType = {
-  id: string;
-  title: string;
-  image: string;
-}
-
 interface IMealCardProps {
   type: MealType;
-  data: MealDataType[];
+  data: RecipeType[];
 }
 
 export const MealConfig: Record<MealType, string> = {
@@ -41,7 +36,7 @@ const MealCard: React.FC<IMealCardProps> = ({
     <View className='meal'>
       <Text className='meal-type'>{MealConfig[type]}</Text>
       <View className='meal-list'> 
-        {data.map(item => (
+        {data.slice(0, 3).map(item => (
           <View key={item.id} className='meal-list-item'>
             <AtAvatar image={item.image} className='meal-list-item-avatar'></AtAvatar>
             <Text>{item.title}</Text>
